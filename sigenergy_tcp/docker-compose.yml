@@ -1,0 +1,45 @@
+services:
+  sigenergy_tcp:
+    build: .
+    container_name: sigenergy_tcp
+    restart: unless-stopped
+    environment:
+      SIGENERGY_HOST: host.docker.internal
+      SIGENERGY_PORT: "5502"
+      SIGENERGY_PLANT_UNIT_ID: "247"
+      SIGENERGY_INVERTER_UNIT_ID: "1"
+      SIGENERGY_TIMEOUT_S: "5"
+      POLL_INTERVAL_S: "15"
+      VERBOSE: "1"
+      MQTT_ENABLED: "0"
+      MQTT_SERVER: host.docker.internal
+      MQTT_PORT: "1883"
+      MQTT_TOPIC: domoticz/in
+      MQTT_USERNAME: ""
+      MQTT_PASSWORD: ""
+      DOMOTICZ_IDX_MAP: |
+        {
+          "plant_active_power": 0,
+          "plant_grid_active_power": 0,
+          "plant_pv_power": 0,
+          "plant_ess_soc": 0,
+          "inverter_active_power": 0,
+          "inverter_battery_power": 0,
+          "inverter_battery_soc": 0,
+          "inverter_phase_a_voltage": 0,
+          "inverter_phase_b_voltage": 0,
+          "inverter_phase_c_voltage": 0,
+          "inverter_phase_a_current": 0,
+          "inverter_phase_b_current": 0,
+          "inverter_phase_c_current": 0,
+          "inverter_total_current": 0,
+          "inverter_pv1_voltage": 0,
+          "inverter_pv1_current": 0,
+          "inverter_pv2_voltage": 0,
+          "inverter_pv2_current": 0,
+          "inverter_pv_power": 0,
+          "inverter_pv_daily_generation": 0,
+          "inverter_pv_total_generation": 0
+        }
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

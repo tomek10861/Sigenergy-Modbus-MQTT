@@ -1,0 +1,42 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Build and package output
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Test and tooling cache
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local environment and secrets
+.env
+.env.*
+*.local
+*.local.*
+
+# System and editor files
+.DS_Store
+__MACOSX/
+.idea/
+.vscode/
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Local snapshots
+*.zip
